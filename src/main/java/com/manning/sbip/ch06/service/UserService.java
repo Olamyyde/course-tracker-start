@@ -18,7 +18,7 @@ public class UserService {
         applicationUser.setFirstName(userDto.getFirstName());
         applicationUser.setLastName(userDto.getLastName());
         applicationUser.setEmail(userDto.getEmail());
-        applicationUser.setUserName(userDto.getUsername());
+        applicationUser.setUsername(userDto.getUsername());
         applicationUser.setPassword(passwordEncoder.encode(userDto.getPassword()));
 
         return userRepository.save(applicationUser);
