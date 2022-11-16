@@ -13,11 +13,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	http.requiresChannel().anyRequest().requiresSecure()
-		.and()
-        .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated().and().formLogin().loginPage("/login").failureUrl("/login-error");
+        http.authorizeRequests()
+                .antMatchers("/adduser", "/login", "/login-error").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().loginPage("/login").failureUrl("/login-error");
     }
 
     @Override
