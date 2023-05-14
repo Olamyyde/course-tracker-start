@@ -34,5 +34,6 @@ public class Course {
 
 	@Column(name = "DESCRIPTION")
 	@NotEmpty(message = "Course description field can't be empty")
+	@Size(min = 3, max = 250)
 	private String description;
 }
